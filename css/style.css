@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+    padding: 0;
+    font-family: Arial, San-Serif;
+	background-color: #d29a95 ;
+	color: #596d82;
+	
+}
+
+main{
+    overflow: auto;
+}
+
+ h2 {
+ 	font-size: 40px;
+    text-align: center;
+}
+
+div img {
+	width: 50%;
+}
+.left {
+    float: left;
+    margin: 30px 30px 30px 30px;
+    background-color:#f3d8e0 ;
+
+}
+.right{
+    float: right;
+    margin: 30px 30px 30px 30px;
+    padding: 10px 30px 10px 20px;
+    background-color: #f3d8e0;
+}
+p {
+	font-size: 50px;
+	line-height: 1.3em;
+	text-align: justify;
+	color:  #303750;
+	padding: 10px 30px 10px 20px;
+}
+
+
+
