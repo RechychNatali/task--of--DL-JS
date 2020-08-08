@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework13</title>
+</head>
+<body>
+<script>
+ 
+    const UPPERLEVEL = 88;
+    const MIDLEVEL = 64;
+    var groupStudentsFirst = [99, 56, 34, 34, 99, 27, 67, 75, 86, 66, 48];
+    var groupStudentsSecond = [55, 53, 1, 77, 81, 32, 76, 83, 16, 66, 65];
+    var groupStudentsThird = [100, 99, 66, 77, 99, 11, 22, 44, 33, 88, 64];
+    var groupStudentsFourth = [78, 8, 24, 32, 78, 23, 59, 30, 60, 6, 97];
+ 
+
+//MAIN  PROGRAMM
+createGlobalArray(groupStudentsFirst, groupStudentsSecond, groupStudentsThird, groupStudentsFourth);
+
+function createGlobalArray(groupStudentsFirst, groupStudentsSecond, groupStudentsThird, groupStudentsFourth) {
+    var globalArray = groupStudentsFirst.concat(groupStudentsSecond,groupStudentsThird, groupStudentsFourth);
+    var finalArray = sortedScoreStudent(globalArray);
+   studentLevelOutput(finalArray);
+}
+
+function sortedScoreStudent(globalArray){
+    var upperLevelArray=[];
+    var middlLevelArray=[];
+    var lowerLevelArray=[];
+    for(let i = 0; i < globalArray.length; ++i)
+    {   
+    let scoreStudent = globalArray[i];
+    switch(true)
+    {
+        case scoreStudent > UPPERLEVEL : upperLevelArray.push(scoreStudent);
+            break;
+        case scoreStudent < UPPERLEVEL && scoreStudent > MIDLEVEL : middlLevelArray.push(scoreStudent);
+            break;
+        default : lowerLevelArray.push(scoreStudent);
+    }
+   }
+   return  formedSortedArray(upperLevelArray, middlLevelArray, lowerLevelArray);
+}
+
+function formedSortedArray(upperLevelArray, middlLevelArray, lowerLevelArray){
+  return   [].concat([upperLevelArray], [middlLevelArray], [lowerLevelArray]);
+}
+
+
+function studentLevelOutput(array){
+    	for (let i = 0; i < array.length; i++){
+            switch (i){
+                case 0:  document.write("<br><br> successful  students <br>");
+                    
+                break;
+                case 1: document.write("<hr><br> not enough successful  students <br>");
+                    
+                break;
+                case 2: document.write("<hr><br>  looser students <br>");
+                break;    
+            }
+            for(let j = 0; j < array[i].length; j++){
+      	     document.write(` ${j+1}) ${array[i][j]}<br>`);
+             }
+        }
+    }
+
+
+</script>
+</body>
+</html>
